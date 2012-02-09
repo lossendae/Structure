@@ -47,7 +47,7 @@ class Structure {
 		
 		$this->config = array_merge(array(						
 			'template_path' => $assets_path.'templates/',
-			'structure_dir' => 'structure',
+			'structure_dir' => 'structure/',
 			'tpl_suffix' => '.tpl',
 			
 			'debug' => true,
@@ -85,7 +85,7 @@ class Structure {
 			$config[$k] =  $this->convertPath($templateProperties[$k]['value']);
 		}
 		$this->config = array_merge($this->config, $config);
-		$this->structurePath = $this->config['template_path'] . $this->config['template_name'] .'/'. $this->config['structure_dir'] . '/';
+		$this->structurePath = $this->config['template_path'] . $this->config['template_name'] .'/'. $this->config['structure_dir'];
 	}
 	
 	/**
@@ -133,7 +133,7 @@ class Structure {
 					$chunk->set('name',$name);
 					$chunk->setContent($o);
 				} else {
-					return 'Structure :  Chunk '.$f.' not found <br/>';
+					return 'Structure :  Chunk <strong>'.$name.'</strong> not found in "<i>'.$f.'</i>"<br/>';
 				}
 				$this->chunks[$name] = $chunk->getContent();
         } else { /* load chunk from cache */
