@@ -1,0 +1,5 @@
+Changelog for Structure
+v0.1
+-------
+
+Initial release
